@@ -151,7 +151,7 @@ void display(){
 
 	glClear(GL_COLOR_BUFFER_BIT);
 	// NB: Make the call to draw the geometry in the currently activated vertex buffer. This is where the GPU starts to work!
-	glDrawArrays(GL_TRIANGLES, 0, 3);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
     glutSwapBuffers();
 }
 
@@ -159,9 +159,16 @@ void display(){
 void init()
 {
 	// Create 3 vertices that make up a triangle that fits on the viewport 
-	GLfloat vertices[] = {-1.0f, -1.0f, 0.0f,
+	GLfloat vertices[] = {
+		//first triangle
+			-1.0f, -0.5f, 0.0f, // left 
+			-0.0f, -0.5f, 0.0f, // right
+			-0.5f, 0.5f, 0.0f,  // top
+		//second triangle
+			-1.0f, -1.0f, 0.0f,
 			1.0f, -1.0f, 0.0f,
-			0.0f, 1.0f, 0.0f};
+			0.0f, 1.0f, 0.0f
+	};
 	// Create a color array that identfies the colors of each vertex (format R, G, B, A)
 	GLfloat colors[] = {0.0f, 1.0f, 0.0f, 1.0f,
 			1.0f, 0.0f, 0.0f, 1.0f,
